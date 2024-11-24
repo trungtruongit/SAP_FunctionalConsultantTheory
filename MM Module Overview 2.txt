@@ -1,0 +1,97 @@
+Plan hỏng phải là nhà máy sản xuất mà là kho để chứa hang - đối với MM. có thể define 2 plant cho 1 nơi sx và 1 nơi chứa hang
+
+Master Data - tạo 1 lần và dùng dữ lieu đó làm dữ lieu gốc và từ đó sẽ đc dùng cho transaction data vd như là tên nhân viên hay là address của cửa hàng. Thông tin của nhà cung cấp - vendor, supplier
+Transaction Data - đơn mua hàng là những data dc tạo hằng ngày vd như là bill mua hàng, xuất hoá đơn - nhập code vendor và có thể xuất hoá đơn ra để xem và coi
+MM - product, mã sản phẩm, kiểm soát quản lí làm sao cho tất cả các module làm lun vd như R&D, kế toán, mua hàng để sử dung đc nữa
+
+Master Data of MM 
+Supplier master record - thông tin của nhà cung cấp - vendor
+Material master record - thay vì dùng product thì dùng từ material
+Purchasing info record - combine of Supplier master cord and Material master record
+
+
+
+
+MATERIAL MASTER RECORD
+Basic data: chia từng danh mục, từng task sẽ lquan đến từng danh mục, từng module (phân quyền) liên quan đến module sale FICO - tên sp, đơn vị tính, weight, height của product (material)
+VD: 1 cái máy tính, phải có description, màu, weight, height. Máy tính này có trading - lquan đến nhà cung cấp thì sinh ra Purchasing
+
+Purchasing: info của vendor, nhập kho khi nào và mua bao lâu 
+Sales: buôn bán sản phẩm
+QM: Quality Management - có những cái barrel để đánh giá sp đó những cái task list. Bn nào phải dô activate những task list đó
+MRP: liên quan đến PP phải có chiều thông tin maintain 
+Stocks at plant/ storage location: lquan đến FICO
+
+
+Number Range:
+NVL: 1000000 - 1999999
+TP : 2000000 - 2999999
+1000000: Máy tính Thinkpad 
+TPADREDXX01: Máy tính Thinkpad red
+
+External Number Range
+
+Tcode: Transaction Code - /n (dùng trên màn hình hiện tại)
+			- /o (pop up trên màn hình khác)
+MM01: Create Material
+MM02: Change Material 
+MM03: Display Material
+MM60: Report List Material
+
+
+Material TYPE: phân nhóm quản lí chia theo sản phẩm - nhóm cao nhất chia theo: thành phẩm, bán sản phẩm, trading, nguyên vật liệu, service, packaging, Liên quan đến thuật toán kho
+	Thành phẩm - bán hàng, sản xuất, COGS, thường hong phải là mua lại
+	Trading là mua đi bán lại
+
+Base Unit of Measure là đơn vị tính của sản phẩm VD nghành sữa: hộp sữa, lốc sữa, thùng sữa, gallon sữa - hong cho chỉnh lại sẽ bị conflict vì nếu sữa sẽ hong có quy chuẩn từ đơn vị cũ qua đơn vị mới sẽ bị sập hệ thống, 
+Ảnh hưởng đến thanh khoản, kế toán kho, layout
+người bán thì bán theo thùng
+người mua thì mua theo pallet (10 thùng)
+những đơn vị hỏng theo Base Unit thì sử dụng Alternative Unit tương ứng với 
+
+FERT: Thành phẩm
+HAWA: Trading
+ROH : Raw Material 
+Material group - Quản lí tổ chức bộ mã dc rõ rang về mặt quản lí dữ liệu
+--> Silicone, Steel, Plastics
+Old material number: muốn lưu lại những mã cũ đó để dễ sử dụng 
+
+Dimensions/EANs
+nếu muốn description lớn hơn 40 char thì sử dụng Basic data text -> phục vụ cho in lên phiếu in 
+
+Purchasing
+GR processing time: thời gian nhập kho - 12 days
+Mini Remaining Shelf Life: tối thiểu thời gian đưa dô kho - 5
+
+ 
+ACCOUNTING
+Valuation Class: 3000 
+Standard Price 12000
+Raw material giá V - Material Bình quân giao quyền
+
+Planning: MRP1, 2, 3, 4
+MRP Type: ND - No planning
+
+Nếu sử dung old number ở system cũ, thì SAP lúc xuất là 2234 number mới thay vì number cũ (chỉ cho clear)
+
+mm02 - change
+
+HAWA: sale, purchasing hong có MRP1-4
+DIEN(tồn kho): sale, mua hang hong cần MRP1-4
+
+***tạo 1 material: có đủ purchasing, stock, accounting, basic data***
+
+
+Business Partner Concept - Vendor Master Data
+Business Partner = Nhà cung cấp, khách hàng, employee - Nâng cấp từ SAP S4/HANA
+Role mặc định là General Data cần thiết lun: tên, địa chỉ, mã số thuế, số điện thoại, bank, email. Những thông tin cần thiết - cơ bản của họ.
+Nhà cung cấp: Supplier 
+Giá trị theo từng company code: FI Vendor, payment term, payment method
+
+-----------------------------------------------
+BP
+Incoterms nhập khẩu nước khác
+tick GR-Based Invoice Verif nếu nhập hang dô là 100 buss, thì xuất hoá đơn 100 buss
+tick Return Supplier: là khi mà mình mua hang và bên kia có đồng ý thì mình tick này lên. Sau đó khi mình return hệ thống SAP sẽ tự động làm hết vd như cấn trừ công nợ các thứ để có thể
+
+

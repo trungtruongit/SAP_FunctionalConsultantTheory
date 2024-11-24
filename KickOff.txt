@@ -1,0 +1,33 @@
+tại sao lại cần sử dung 2 hệ thống erp dạ anh
+PP - MES - Manufactoring Enormous System
+SAP thuần về thống kê là nhìu, phần mềm kia rẻ tiền hơn, tư vấn cố gắng xài 1ERP là sử dung SAP
+tính nhất quán, tin tưởng gần như là tuyệt đối, tạo chức năng thông qua màn hình thay vì đụng thẳng dô database audit hay là big4
+MISA tập trung vào kế toán
+cty vận hành đơn giản và mún giảm chi phí vận hành và maintain mún down grade về sử dung MISA 
+
+SAP ra đời là 1 giải pháp của ERP là phần mềm giao tiếp giữa các phòng ban và ng dùng
+có làm cho nguồn nhân lực giảm hơn hay hong
+
+phần mềm để thống kê số liệu hui thay vì note ra sổ thì note vào phần mềm
+phòng ban kế hoạch, phải có yếu tố con người để đưa ra quyết định
+
+ốc vít tms, met, dms, wms, plm?
+SAP thuần về việc thống kê, ko có thêm hướng dẫn ng dung 1 số đặc thù nhất định
+vì vậy MES giúp công nhân biết sử dung bnhieu con ốc vít để làm ra chiếc xe hơi đó
+
+TMS - transport
+DMS - distribution 
+
+bán hang, mã hang, kênh phân phối nào thị trườg nào
+sp nào số lượng bhieu
+
+thành phẩm cần dc sx hay nguyê vật lieu cần dc sản xuất
+
+MM - kho nhập bán hang 
+PP, execution - lập kế hoạch, thực hiện, kiểm soát sx của doanh nghiệp
+SD
+FICO: FI - CO
+QM - medical, f&b, seafood,
+PM 
+PS - 3F farm food fish
+

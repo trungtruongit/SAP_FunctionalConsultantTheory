@@ -1,0 +1,29 @@
+MRP - Material Requirement Planning 
+chuẩn bị lên kế hoạch để mua nguyên vật lieu làm nên thành phẩm
+
+Production Planning
+tính toán coi là có nguyên vật lieu nào nhập bên ngoài hong, nếu nhập bên ngoài thì phải lên kế hoạch mua (Procurement)
+
+Procurement
+- đi tìm nhà cung cấp, đánh giá dựa trên tiêu chí
+	+ chất lượng tốt
+	+ giá rẻ
+	+ giao hang nhanh 
+	+ uy tín
+
+Good Receipt mean take the ingredient from the outsource supply
+
+Quality Inspection có 1 module riêng lun nếu integrate them QM
+If not pass the quality have this solution
+	+ đổi trả nhà cung cấp
+	+ trả nhà cung cấp
+	+ xuất tiêu huyr
+	+ block chờ ra quyết định
+
+Good Issue - Good Consumption - Withdraw
+Mang nguyên vật lieu tạo thành sản phẩm 
+
+Good Receipt From Product 
+Nhập lại dô kho những sản phẩm đã sản xuất
+
+Tuỳ doanh nghiêp

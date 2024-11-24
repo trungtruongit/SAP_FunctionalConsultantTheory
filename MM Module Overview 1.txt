@@ -1,0 +1,120 @@
+MM Module
+chức năng, take care những chức năng dì
+
+MM - Material Managment - Core module of SAP
++ Mua hàng
++ Inventory
+Work with: 	phòng mua hàng
+		quản lí kho hàng
+
+MUA HÀNG
+- kiếm nguồn supplier(vendor) trao đổi tạo đơn mua hàng nhập hàng vào kho
+- thuê service 
+- gia công 
+- sample, poster, các supply thiết yếu, office supply để đáp ứng mọi nhu cầu mua hàng các phòng ban của cty
+
+INVENTORY
+- IM (Inventory Management) != WM (Warehouse Management) - Quản lí chi tiết, location của món hàng, biết barcode khi quét hàng ra khỏi kho và biết rõ nằm ở kho nào và ở kệ nào chi tiết hơn hẳn
+- nhập kho, xuất kho, quản lí số lượng đang có trong kho
+
+MM Connect with SD, PP, FICO
+SD:   Sale có nhu cầu vd như TheGioiDiDong mún bán iPhone nên liên hệ Apple để phân phối và bán, biết demand của nhau?
+PP:   Cần cân đo đông đếm những thành phần, nguyên vật liệu để tạo ra thành phẩm
+FICO: Dữ liệu của mỗi 1 module đều đổ về FICO, mua hàng sau khi mua xong những công nợ đều trả ra FICO. Để biết cần bnhieu tìn để đưa ra cho nhà cung cấp. Kế toán giá thành và kế toán kho phải double check
+
+Khi mua hàng về kho phải suy nghĩ có liên quan đến các module khác hong, nhập hàng về kho thì giải quyết kế toán seo, khi làm solution phải theo sát thực tế, phải giải quyết cho nhu cầu doanh nghiệp. 
+Lun Lun làm theo các module khác, để tích hợp dới các modules khác
+
+
+PROCUREMENT
+Purchase Requisition (PR)
+Sale và Production cần mua hàng mới, sample mới cần đưa số lượng bnhieu và mua về kho nào => tạo PR bằng tay thông qua System
+
+Purchase Order (PO)
+Khi mà MM chốt mua hàng rùi, duyệt đơn PR thì sẽ tạo ngược lại PO để các phòng ban đi mua hàng
+
+Source Determination 
+Nhà cung cấp, SAP sẽ có list nhà cung cấp mình sẽ chọn 1 trong những nhà cung cấp đó nếu có nhu cầu
+
+Vendor Evaluation 
+Có feedback vendor 
+
+Inventory Management
+Good Receipt(GR)
+nhập hàng vô kho - hàng trong kho tăng lên
+
+Good Issue(GI)
+Hàng rời khỏi kho - hàng trong kho giảm
+
+Transfer Postings 
+chuyển hàng giữa các kho
+
+Physical Inventory
+Kiểm kê, tồn kho của một sản phẩm cty đó
+
+
+MM Organization Structure
+MM - Procurement, Inventory
+
+Client 	- System đơn vị chứa hết tất cả dữ liệu của hệ thống đó (DEV: , Quality: , Production: )
+
+Company Code phụ thuộc vào tuỳ chi nhánh, đất nước sẽ tuỳ vào vùng lãnh thổ khác nhao thuế, báo cáo tài chính sẽ khác nhau nên là sẽ có nhiều company code khác nhau
+
+Tách company code tất cả các dữ liệu system sẽ đẩy theo company code, cuối kì có thể dễ dàng chiết xuất theo company code
+Company dc define đầu tin
+
+Plant là nơi để chứa hàng, tồn kho hàng (VD: như là CocaCola ở miền Nam có 2 plant - 2 nhà máy sx ở Bình Dương, SG)
+1 Plant chỉ chứa duy nhất 1 Company code
+1 Company code có nhìu Plant
+
+Storage Location - chia theo loại sản phẩm phụ thuộc vào CTY
+vd như là trading, bán thành phẩm, nguyên vật liệu, hàng lỗi bị QA
+Xây dung: của nhôm, cửa gỗ, hoá chất đều là kho riêng phụ thuộc vào nhiệt độ, cách tổ chức bảo quản phụ thuộc vào nguyên vật liệu đặc tính của sản phẩm
+đa phần sẽ có plant và sẽ có ít nhất 1 Storage Location
+
+Batch - Ngoài ra nhiều cty sẽ có tổ chức nhỏ hơn Storage Location (VD: Sữa, Dược)
+Đặc tính: quản lí hạn sử dụng - hạn date khác nhau tuỳ loại thuốc, để xử lí ngay những sp nào gần hết date
+	  nếu hàng nào gần hết date thì kho bị sử dụng chưa tối ưu vì chứa những sp gần hết date và thậm chí hết date
+
+Client - Basis Consultant sẽ set up sẵn hết Client
+Company Code - FICO Consultant sẽ lấy requirement khách hàng và sẽ set up tạo những Company Code đó
+Plant, Storage Location - MM Consultant sẽ đảm nhiệm phụ trách vai trò này
+
+Plant sẽ chia ra nhiều kho hang: kho nguyên vật liệu, kho thành phẩm, kho bán thành phẩm, kho QA, mức độ thành phẩm hong quá nhiều thành phẩm dồn vô 1 kho thì sẽ tạo ra storage location. 1. chia ra theo nguyên vật liệu phụ thuộc vào tính chất để bảo quản tuỳ thuộc vào business. hàng lỗi QA phải đưa đúng vào vị trí mong muốn như là kệ ở trong kho.
+
+ORGANIZATIONAL UNITS IN PURCHASING
+
+1. Plant-Specific Purchasing 
+có 2 đơn vị đi từ Company code:	- tổ chức mua hàng (cao nhất trong mua hàng) - Purchasing Organization A vd như phòng sale, văn phòng mua hàng đc đặt ở trung tâm Q1, và kho lưu trữ đc đặt ở Q9 
+
+ở dưới nhà máy Coca có phòng mua hàng - phòng mua hàng đó tương tự phòng mua hàng dưới kho
+
+nếu 2 purchasing organization nếu muns quản lí riêng, format kpi, cách tổ chức riêng, số liệu mua hàng của đúng vị trí đó thì mới chia ra 2 purchasing organization. Nếu mún cả trên q1 mua hàng cho dưới nhà máy q9. q9 mún mua hàng cho phòng SA, phòng Sale, phòng sản xuất. Như vậy chúng ta cần 1 purchasing organization thay vì 2
+
+mỗi 1 purchasing organization mua hang cho 1 bộ phận
+
+
+2. Cross-Plant Purchasing
+Cocacola mở nhà máy mua hàng ở HN, phòng mua hang ở Q1 chịu trách nhiệm mua hang ở cả 2 factory 
+
+
+1, 2 cùng chung Company Code
+
+
+3. Cross-Company Code Purchasing khác company code
+Coca ở VN có tổ chức mua nguyên vật liệu cho Coca ở TQ khác 2 company code 1 là VN, 2 là TQ
+
+Purchasing Or là tổ chức sắp xếp mua hàng, kiếm vendor(nhà cung cấp) hong phải ng giao hàng
+Doanh nghiệp Global - phân quyền theo vùng
+trường hợp phân quyền sẽ cho company bên TQ sẽ tạo PO để purchasing or mua hang giùm
+mua trong cùng 1 country mà khác company code để giải quyết vấn đề pháp lý 
+khác country system vẫn cho đính kèm chứng từ kế toán
+Giải quyết mua bán trong nội bộ khác/cùng country mà khác company code: STOCK TRANSPORT ORDER - STO
+
+
+MM Organization Structure
+
+
+MM Master Data
+
+Basic Procurement Process

@@ -1,0 +1,167 @@
+*** IMPLEMENTATION PROJECT, 5 phase ***
+new firm
+Phase 1: Project Preparation
+	know each other, their cons and give the solution
+	yêu cầu, lịch trình, chi phí 
+
+Phase 2: Business Blueprint most important
+	have the backbone, so make the detail 
+	from requirement, bít ông khách hang có ước muốn dì và định nghĩa scope
+	scope, mem, month 
+	cbi cơ sở hạ tầng, người ntn có bước triển khai cụ thể
+	phải làm cụ thể tất cả các chi tiết
+
+Phase 3: Realization
+	Hiện thực hoá yêu cầu KH lên hệ thống, 2 mảng là technical và functional 
+	Bên khách hang có nghiệp vụ như z từ đó phía functional phải cấu hình theo yêu cầu của 
+	khách hang
+	có bao nhiu cty, bnhieu nhà máy, nhà kho phía functional phải cấu hình cái đó
+	Nghe requirement từ khách hang và làm document sau đó đưa khách hang approve với KH
+
+Phase 4: Final Preparation	
+	Chuẩn bị những task chưa làm phải làm xong và cbi hết tất cả các requirement của KH
+
+Phase 5: Go live & Support & CI
+	Go Live hong dc sinh ra lỗi, KH trực tiếp sử dung app và nếu có lỗi thì phải sửa ngay 
+	sẽ ảnh hưởng trực tiếp đến việc kinh doanh của KH
+
+** bạn phải là ng thiết kế ra requirement cho KH, KH nói mình Nghe và hiểu từ đó đẩy lên system thì đc gọi là Implementation
+*** nếu KH define ra requirement thì gọi là Development
+ở Nhật thì thiểu số là dự án Implementation
+ở VN thì đa số là dự án Implementation
+FPT 3/10 dự án là Implementation và còn lại là Development và còn cái khác
+Dự án này là khó nhất
+
+*** ROLL-OUT PROJECT ***
+Dự án dc triển khai cùng 1 hệ thông, bộ giải pháp sang các chi nhánh khác hoặc cty con ở nước ngoài
+Global Template bốc ra và mang i đâu cũm dc cũm sử dung dc 
+Local Requirement ở các đất nước sẽ có logistic riêng, hải quan thuế các thứ sẽ khác nhau nên là phải nghiên cứu và tích hợp tuỳ theo a phương
+
+TH1: Có cty con ở VN thì dung chi nhánh đó bóc tách phần Local Requirement 
+TH2: nếu hong có cty con thì Outsource
+
+
+*** SUPPORT & MAINTENANCE (AMS)	
+SAP Technical Development
+	tạo thêm function, sửa business rule và sửa func 
+SAP Functional Support
+	hướng dẫn hỗ trợ cho user để sửa lỗi chứng từ kế toán
+SAP Basis Support
+	việc lquan đến nền tảng của hệ thống security, phân quyền user, mật khẩu
+Add-on Support
+	
+Trả tiền theo theo gian vd như 3 tháng, support theo ticket 
+Support theo ticket: 
+	raise ticket analyst ticket and give the solution for that issue 
+	làm trên hệ thống vaf KH approve 2 lần, 1 lần là requirement và lần 2 là duyệt solution và đã hoàn thành sau đó đóng ticket
+
+** Trường hợp quá khó, thì hỏi expert của CTY, nếu khó hơn nữa thì hỏi expert của SAP
+họ prefer multiple nhìu hơn, do là mún 1 document có thể xài ở nhìu trường hợp hơn. 
+SAP GUI: Home by my SAP - Enhance function cũ thay vào đó SAP Cloud sẽ mún định nghĩa business với KH
+SAP Cloud: 
+Skill của Consultant 
+	dựa vào kiến thức hệ thống
+
+INTERGRATION PROJECT
+	Sap to Non-SAP: tích hợp SAP với 1 hệ thống khác ngoài SAP
+	Non-SAP to SAP: 
+SAP có dữ lieu, program là ngôn ngữ, data là data type 
+Mình chỉ đứng ở vai trò cương vị là SAP to Non-SAP
+
+** DATA MIGRATION PROJECT **
+Chọn Data mún Migration là dì: hệ thống cũ hay là dữ lieu từ bên ngoài
+Phải xây model xong, test thử dữ lieu từ 1-10 coi sang bên ây có oke hong
+
+Hiểu dc dữ lieu đầu vào và đẩy dữ lieu lên SAP
+
+SAP có 2 dạng Cloud là Public Cloud và Private Cloud
+	Public Cloud: phòng chung và vẫn bảo mật thông tin
+	Private Cloud: phòng riêng để bảo vệ thông tin nhạy cảm hơnn
+
+Vd 1 ng vừa là vendor vừa là customer, thanh toán, thông tin chứa 2 lần
+SAP ECC: hong qtam về vấn đề trên nên là dung lượng bị chứa 2 lần và hong tối ưu hoá về mặt hệ thống
+
+SAP S/4 Hana sẽ có SAP BP code và có role nào vd như vendor hay customer or both
+*SAP BP: SAP Business Partner
+
+Giả sử cty dung SAP ECC, mún update SAP S/4 Hana. 
+Câu hỏi là SAP ECC có hỗ trợ đc sau này hong?
+Fact: 2027 disable SAP ECC
+Tất cả dịch vụ đều trả phí bth chỉ khi support thì hong sp nữa hui
+
+PROJECT ORGANIZATION
+1 hour/ 6 millions vnd
+
+SAP
+Sales Representative is the guys who is sale their features
+Supporter, Expert Solution là ng lun sp theo chuẩn của SAP chứ hong sp tính năng nâng cao
+
+SAP Partner 
+Triển khai SAP
+Steering Committee nói veef tầm nhìn và sự hợp tác của 2 bên trong tương lai
+Delivery Manager là ng chịu trách nhiệm lớn nhất trong việc triển khai trong dự án
+Functional Consultant là ng cấu hình SAP
+Business Key Users là trưởng phòng kế toán, trưởng phòng kinh doanh thường sẽ là Senior Functional Consultant
+Ng nào gặp trưởng phòng ban đó thường functional consultant sẽ đi chung 1 team sẽ tuỳ vào scope mỗi ng đảm nhận 1 modules
+SAP hong đủ nguồn lực để triển khai
+
+PROJECT IMPLEMENTATION METHODOLOGY
+ASAP Methodology
+Phương thức chung đa số các dự án IT
+
+hợp đồng T&M time and management
+Mindset của từng ng rất tốt, nên hong có ảnh hưởng trì trệ 
+những ng quản lí cao thì phải là ng ứng đắn và trung thực với bản than trung thực với team, vừa khách hàng
+
+SAP Activate
+
+Discover: SAP Public Cloud có Scope ID (XXX) 
+Prepare
+Explore: Workshop 
+* Sắp xếp theo business flow A B C = nghiệp vụ 
+KH có câu hỏi hay dì hong thì phải clear ở phần Explore 
+Interface là tích hợp 
+SAP FI < A system 
+Code ABAP sẽ là code trên SAP GUI
+Code với Interface là code trên SAP BTP 
+Realize
+Deploy
+Go Live
+
+
+PROJECT DEVELOPMENT PROCESS
+ai thiết kế Detail Design sẽ Coding lun tạo Unit Test Case
+Functional Test thì Functional Consultant sẽ làm test lun
+
+PROJECT MANAGEMENT
+Progress Management
+
+WBS
+
+Public Cloud code interface
+triển khai 1 con sẽ triển khai hết - triển khai hàng ngang
+
+*** SAP Career Path ***
+SAP Functional Consultant 
+- Cấu hình hoàn chỉnh Module theo SAP Standard (Tạo master data, cấu hình)
+- Tạo các chứng từ giao dịch hoàn chỉnh cho toàn bộ hoặc các process chính trong Module (tạo các transaction data)
+
+Junior: 0-2 năm
+Middle Senior: 2-5 năm
+Senior: 5-10 năm
+Management: lead team, lead of big module like FICO 
+Project Manager: 
+Program Manager: cost and revenue 
+Delivery Head: đấu thầu, quan hệ khách hàng, doanh thu bộ phân của đơn vị
+
+PMP: tiếng anh đọc hiểu tốt, 35h học course trên Udemy, 3 năm liên tục quản lí dự án thực tế
+SAP Implementation Public Cloud
+project objective, role, result
+có 2 trường hợp 
+	cá nhân thì đôi khi bị PMI Audit 
+	cty thì sẽ chứng nhận xác thực dễ pass hơn Audit
+
+từ đây về sau thì thi trên cloud
+
+
+
