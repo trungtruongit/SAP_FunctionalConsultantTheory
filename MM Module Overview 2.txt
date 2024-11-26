@@ -95,3 +95,4 @@ tick GR-Based Invoice Verif nếu nhập hang dô là 100 buss, thì xuất hoá
 tick Return Supplier: là khi mà mình mua hang và bên kia có đồng ý thì mình tick này lên. Sau đó khi mình return hệ thống SAP sẽ tự động làm hết vd như cấn trừ công nợ các thứ để có thể
 
 
+2:21:13

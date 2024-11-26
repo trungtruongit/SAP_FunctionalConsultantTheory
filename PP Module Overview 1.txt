@@ -1,0 +1,115 @@
+PP
+có 2 phần: 1 là lập kế hoạch, 2 là phân hệ sản xuất
+Production Planning - core module SAP
+Bảo hiểm, bất động sản: hong có sản xuất
+
+Quản lý BOM(Build of Material) định mức vật tư sản phẩm hay là cấu tạo nên sản phẩm. VD như là ly cà phê sữa thì cần cà phê, sữa, ice
+Routing là quản lí cần di qua day truyền nào, process nào
+PP có quan hệ mật thiết với MM, FICO, SD. MM cần biết khi nào mua nguyên vật liệu de có thể sản xuất, check coi cần bnhieu cái nguyên vật liệu de chế tạo bánh xe cho 80 chiếc xe hơi
+
+Có nhập xuất kho hay là dòng tiền di qua thì cần phải di qua FICO hết
+
+SAP FSCM: SCM Supply Chain từ lúc mua hang den lúc bán hang và trả lại hang của khách hang
+
+SAP HRM: phân hệ này dang hot sẵn sàng trả lương cao de chieu mộ consultant liên quan 
+
+SAP QM: quản trị về thành phẩm, quản trị về tác phong của con ng, quản trị về document da số cần quản trị về chất lượng thành phẩm
+
+SAP PM: máy móc các thứ
+SAP PS: Farm, food, feed quản lí về vòng đời của sản phẩm vd bán cửa thì ký hợp dong, do đạc rùi nghiệm thu
+
+QM, PM, PP đi chung tổ hợp của manufacturing
+
+Báo cáo OEE (Overall Equipment Effectiveness)
+
+Vừa có kế hoạch và vừa có thực thi 
+tinh tuý hay nhất ở công doan lên kế hoạch rùi
+
+PP bị kiềm kẹp dới MM và SD. Khi SD gấp rút và cần them product và liên kết với MM cần them nguyên vật lieu de sản xuất. Có 2 thay đổi chủ động hay bị động. Chủ động là khảo sát thị trường và mới tiên phong, kế hoạch thay đổi theo chủ đích và một mình 
+
+AI hong thay thế dc Consultant bởi vì mình tư vấn cho doanh nghiệp cần yếu tố con người quyết định vào 
+
+
+Customer có 5 loại hình sản xuất
+	+ Make to Stock - Sản xuất và lưu kho khách hang tới mới lấy ra bán. VD: mì gói, cuốn vở. Họ sẽ ước chừng sức tiêu thụ của khách hàng trong tương lai de có thể tạo sp và dua nhà phân phối 
+	+ Make to Order - Có đơn dat hàng mới sản xuất. VD: bán cho xôi 10k. Từ đó cô bán xôi mới cbi xôi mặn bỏ chà bông các thứ dô mới dc
+	+ Assembly to Order - Có đơn dat hàng sản xuất tới cấp bán thành phẩm trước
+	+ Config to Order - sản xuất gần như thành phẩm. VD: có phụ kiện them nếu KH có nhu cầu
+	+ Engineer to Order - like Bespoke cần phải có số đo và nhu cầu của khách hàng de tạo sản phẩm bán hàng.
+
+Trên hệ thống SAP gom lại 2 loại hình là Make to Stock và Make to Order (MM, SD, PP)
+PP phải nương theo SD
+
+Make to Stock phải du báo nhu cầu khách hàng, Make to Order đặt vấn de hong cần dự báo
+doanh nghiệp lớn cần KPI bán hàng, dau tiên có dữ lieu thô trc vd như là kênh bán hàng, kênh phân phối, thị trường và bán hàng
+Từ những dieu trên mới dưa ra kế hoạch bán hang
+
+Sơ đồ dựa vào sức tiêu thụ ủa thị trường dựa vào program MRP Run (Material Requirements Planning) chỉ dung cho nguyên lieu dau vao và lập kế hoạch cho thành phẩm, bán thành phẩm dau ra MPS (Master Production Schedule). 
+
+
+Nếu trong kho dư so với kế hoạch sản xuất thì MRP sẽ hong chạy
+Procurement: mua hang, bây giờ cần 800 bánh xe nữa de mua hang. Thấy oke thì tạo PR rùi tạo PO
+
+hang mua về status chờ kiểm, sau đó QA/QC kiểm tra oke rùi status chuyển sang pass. Trong dk hang lỗi, thiếu số lượng thì phụ thuộc doanh nghiệp - đổi trả nhà cung cấp, tiêu huỷ. 
+
+
+Good Issue: là xuất tiêu hao nguyên vật lieuje de san xuat. Nhập bán thành phẩm, nhập thành phẩm 
+Good Issue: là xuất tiêu hao thành phẩm de ban cho khach hang. 
+
+nhìn vô doanh nghiệp có sức song hay hong, nhìn vào kế toán và lập kế hoạch (supply chain) thì cty tốt mạnh bền vững. FICO hong ktra PP khi lên kế hoạch sản xuất vd cần 4 bánh xe mè PP xuất lên 6 bánh xe thì như vậy bị that thoát nguyên vật lieu  
+
+workcenter-routing: tao hành, tao tỏi, phi tiêu, luộc gà, rim gà, nêm nếm gia vị, thấy nước sốt kẹo lại tắt bếp. workcenter là công doan sản xuất
+Máy 1 bnhieu phút bnhieu tiếng, tương tự như máy 2-3
+
+PP ORGRANIZATION STRUCTURE
+
+cần define company code, có bnhieu plant, nhà máy nào lquan den sản xuất nhà máy nào lquan den trading, nhà máy chứa nguyên vật lieu, mua nguyên vật lieu chứa kho nào và có quality hong. Có quy trình chuyển về kho chứa về kho tổng ntn. 
+Phải define trc Company Code, Plant, Storage location
+
+Master Data in PP - Bộ dữ lieu danh mục dung chung
+	MM phân hệ mua hang Master data: quản lí về tệp vendor, bộ mã. có phiếu yêu cầu mua hang PR, phiếu mua hang PO, quản lí về tệp khách hang
+
+MATERIAL MASTER - thông tin khai báo về mua hang, sản xuất, bán hang, kho bãi
+
+MM dung ra là PIC (Person in charge)
+PP consultant handle Material master
+BOM cấu thành vật tư sản phẩm, vd: mì gói BOM là gói mì và bịch gia vị 
+
+1 pallet 10 thùng hay 20 thùng
+
+work center - máy móc, cụm máy móc, công đoạn sản xuất
+
+routing phải đi qua công đoạn nào có lquan den chi phi
+
+BOM chi phí nằm trên nguyên vật lieu, mua hành, tỏi, nc mắm bnhiu tìn, Tính chi phí của BOM
+Routing chi phí vận hành vd như là ga, dien. Nấu, rửa sẽ bị hư hao nên cần chi phí khấu hao, chi phí cho ông dau bep nhân công máy móc
+
+Start Up bán cà phê, uoc chung doanh thu - chi phí = lợi nhuận 
+
+giá tạm tính là giá tiêu chuẩn - giá lý thuyết . Giá thực tế là giá chiều long khách hang vd như cho them cà phê sữa
+
+work center là 3 máy 1,2,3
+BOM là cà phê, sữa
+Product version pick 1 BOM 1 work center để sản xuất.
+
+Master Data:
+
+*** Khi đi vào 1 dự án, thường dự án mới. Có 2 thứ cần define ngay thứ nhất là Organization Structure thứ 2 là giải pháp bộ mã. Thứ nhất là liên quan tới pháp nhân pháp lý, hỏng bít nhà máy nào de luuw chuyển kho ***
+
+Có bnhieu mã nguồn vật lieu - raw material
+Có bnhieu bán thành phẩm - BOM
+
+vắt mì là 1 bán thành phẩm, gia vị là 1 bán thành phẩm, bao bì + 2 bán thành phẩm sẽ thành sản phẩm
+nếu hong define rõ về bộ mã
+
+Bill of material
+
+basic data là những thông tin chung
+Purchasing là mua hang
+work scheduling và 
+
+
+
+
+
+
