@@ -106,7 +106,8 @@ Bill of material
 
 basic data là những thông tin chung
 Purchasing là mua hang
-work scheduling và 
+lô sản xuất này màu đỏ, hình tròn, dạng lỏng
+
 
 
 

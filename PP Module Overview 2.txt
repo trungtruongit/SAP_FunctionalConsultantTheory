@@ -1,0 +1,81 @@
+trước khi làm giải pháp từng phân hệ phải define 2 điều
+1 là organization structure, bnhieu plant, plant đó là sản xuất hay trading, có bnhieu kho bãi, những kho nào phải chạy MRP 
+có bnhieu cấp theo thành phẩm hay bán thành phẩm, dựa trên size hay tính chất - giải pháp về BOM. VD: chiếc xe A màu đỏ hay chiếc xe A màu xanh khác với chiếc xe A
+
+ngày giờ bắt đầu, giờ kết thúc
+Thời gian tam suất biến thiên theo thời gian sản xuất
+hong sử dụng work center để sử dụng vấn đề này
+
+work center sản xuất, hong nằm trong nguyên vật liệu, điện nước khấu hao, nhân công
+Config ở bên FI về đơn giá, 1kg điện 3k đồng => 300k tam suất. Routing sẽ có work center về sản xuất
+
+1 bộ mã về xe ô tô khác nhao màu sơn, ít nhất 2 phiên bản BOM trong đó component trong đó phải có màu sơn bao nhiu kg sơn các thứ
+
+ngày hnay sản xuất ở máy 1, 2, 3 luân phiên máy với nhao
+
+điểm khác biệt giữa S/4HANA với ECC. S/4HANA thì phải tạo production version mới có thể cấu thành lên
+
+đã chọn material status chọn 81 là có BOM nhma hong cho sx
+
+
+***MRP Type: cách chạy mã đó như thế nào đầu ra là thành phẩm, bán thành phẩm M0-M4
+MPS
+M0: chuẩn cho demand sx 100 cái, trong kho tồn 20 cái, system cho cần 80 cái. Firming là khi ra đc kế hoạch sx ng dùng sẽ vào trong kế hoạch đó ng dùng nhìn sẽ bít được là nên sản xuất như z.
+tổn kho là 20, mình bán dc 5 xe. Nếu planning order 80. Mình có demand 100 tồn kho 15
+nếu firming hong xác nhận, tồn kho 15, planning order 80. demand 100. tạo planning order mới là 85. thường chọn M0 
+Đối với sx trên thế giới: discrete, process, repetative, printing 3d. Trên hệ thống SAP có 3 loại
+Discrete những sp cầm nắm, đếm dc. Vd: bù long, con tán, sx-bán thành phẩm-đóng gói sp
+Process có những công thức như là hoá chất, vaccin, theo hàm lượng cthuc nhất định. 
+Repetative sử dụng cho những nhóm nghành sx hàng loạt đơn giản như là gạch men, silanh, đất sét, cát, nc, bột. Đưa vô trong khuôn định hình nung lên sx theo mẻ. Vd làm một gạch to xong rùi cắt thành những viên gạch nhỏ. 
+D1: Replenisment xem tồn kho đẩy lên theo maximum contain.
+ND: No planning hong chạy MRP sx 100 cái, tồn kho 20 cái. Thì hong planning dì hết hỏng cần đưa planning vô. Dùng third party từ đó đẩy về ERP. Tự đi mua ngoài và hong cần hệ thống MRP can thiệp
+P1-PP: Sử dụng cho phần nguyên liệu. Nguyên liệu cần sx 80 cái xe. Cần 320 cái bánh xe. Tồn kho còn 100 cái bánh xe. Planning 220 cái bánh xe
+
+reorder point: tủ thuốc gđ: đau mắt, đau răng, đau bụng. Trong tủ thuốc min phải có 1 vỉ thuốc panadol. mình mua là 4 vỉ, hiện tại là 2 vỉ thì hong xuất ra planning dì hết. nếu còn 1 thì mua thêm nửa vỉ, hệ thống tự đưa ra planning
+
+
+*** MRP 1 ***
+đầu ra output sử dụng M0-M4. M0, PD
+Nguyên vật liệu hong nằm trong BOM
+thành phẩm hong cần điền Reorder Point 
+Planning Time Fence: thời gian chốt kế hoạch: 3
+after PTF: delay planning 3 ngày
+in PTF: nếu hong có lệnh planning mới thì sẽ cancel planning cũ
+
+nếu có kế hoạch gấp phải thay đổi ngay, đa số ng sẽ dùng để tuỳ có ứng biến
+MRP Controller: lập kế hoạch cho những mã nằm trong grp
+những nhóm mã có chức năng giống nhao thì cùng MRP giống nhao
+Lost Sizing Procedure: 	EX: Lot-for-lot - hôm đó có 1000 khối tạo ra lệnh là 1000 khối
+			FX: Fix order quantity - xe bồn trộn tối đa 100 khối chất lỏng. Planning là 1000 khối. FX có maximum là 100. Fixed Lot Size: 100 x 10
+Doanh nghiệp cần quản lí chặt về số lô như là chai thuốc hay là bim bim bánh kẹo. sp sẽ có thông tin về số lô, ngày sx, ngày hết hạn. VD: những sp có số lô đó bị ngộ độc, sau đó truy thu về số lô đó bít sp đó trộn ngày nào và số lô nào. Cthuc, tổ đội nhóm để có thể truy cú về tank và cthuc cùng với đó là nhân sự nhóm nào. hong truy xuất là tank nào vì 10 tank sử dụng EX, còn 1 tank sử dụng EX. Nếu planning chỉ 1 ngàn khối nước, mà công suất 100 thì sử dụng FX hoặc mình mún track về số lô thì sử dụng FX. Dưới 1 vỉ các bạn sẽ đi mua. Nếu hong khao báo maximum stock level thì system mua theo số reorder point. vd như trong kho còn 0.5 vỉ thuốc hong có báo max stock thì system mua 0.5 vỉ để bằng 1. Dùng max là 4 thì system mua 3.5 vỉ
+
+WB: weekly lot size mua hàng theo tuần, nếu kế hoạch thì theo ngày TB còn sx thì theo tuần?
+
+Minimun Lot Size: Lot size tối thiểu, sx xe này phải tối thiểu 100 cái, đi kèm với FX
+
+H1, đi với maximum stock level 
+assembly scap: hao hụt như nhào bột. trong sx bột sẽ bị hao hụt 10% vì rơi vãi nữa. SX planning sẽ tự mua thêm để tránh hao hụt vd như làm 100 kg bột thì thành phẩm hao hụt còn 90kg nhập ac thì system tự mua thêm 110kg bột 
+
+rounding profile: cho phép làm tròn lên để cho doanh nghiệp dễ mua hơn làm tròn lên 1-3 cái
+khu vực nào sẽ chạy MRP 
+
+Rounding value: khai báo số lượng làm tròn lên: 1-4
+MRP Areas: có bộ phận R&D development nghiên cứu thị trường sản phẩm, phần nguyên liệu này chỉ để nghiên cứu sản phẩm mới hong dc phép quay đầu để nghiên cứu sản phẩm mới. Khu vực đc chạy MRP
+MRP Area theo plant, có 10 plant thuần về trading. plant đó hỏng dc tính vô trong doanh nghiệp phải loại kho đó ra. MRP Plant hoặc kho. 1 là include, 2 là exclude
+1 doanh nghiệp có 10 kho. 1, 2 kho hong chạy MRP hoặc ngược lại 1, 2 chạy MRP thì include
+
+*** MRP 2 ***
+Procurement Type: 	E: Inhouse Production sản xuất trong nhà máy, output mã thành phẩm, bán thành phẩm trong nhà máy
+			F: External Procurement nguyên liệu sẽ đi mua bên ngoài 
+			X: bán thành phẩm, thành phẩm được sản xuất trong nhà máy. Vì năng lực nhà máy hỏng đủ thì cần phải mua bên ngoài và sau đó dán tem bên mình 
+Trong nhà máy thì để E hoặc X thui
+
+
+
+		
+
+
+
+
+
+
